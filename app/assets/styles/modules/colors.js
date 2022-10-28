@@ -1,6 +1,4 @@
-import { StyleSheet } from "react-native";
-
-import { colors } from "./vars";
+import { colors } from "../base/vars";
 
 // -----------------------------------------------------------
 
@@ -11,7 +9,7 @@ Object.keys(colors).forEach((c) => {
   textColors[`text${className}`] = { color: colors[c] };
 });
 
-export const textColorStyles = StyleSheet.create(textColors);
+export { textColors };
 
 // ----------------------------------------------------------
 
@@ -22,4 +20,4 @@ Object.keys(colors).forEach((c) => {
   bgColors[`bg${className}`] = { backgroundColor: colors[c] };
 });
 
-export const bgColorStyles = StyleSheet.create(bgColors);
+export { bgColors };
