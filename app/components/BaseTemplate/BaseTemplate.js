@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, ScrollView, StatusBar } from "react-native";
+import { View, Text, SafeAreaView, StatusBar } from "react-native";
 
 import AppView from "BaseComponents/AppView";
 import AppText from "BaseComponents/AppText";
