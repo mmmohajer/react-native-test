@@ -4,16 +4,19 @@ getJsContext() {
 
     echo """import { View, Text } from \"react-native\";
 
-import { styles, fontStyleFunc } from \"../../assets/styles\";
+import AppView from \"BaseComponents/AppView\";
+import AppText from \"BaseComponents/AppText\";
+
+import { styles, fontStyleFunc } from \"Styles\";
 
 import { localStyles } from \"./localStyles\";
 
 const $compName = () => {
   return (
     <>
-      <View>
-        <Text>$compName</Text>
-      </View>
+      <AppView>
+        <AppText>$compName</AppText>
+      </AppView>
     </>
   );
 };

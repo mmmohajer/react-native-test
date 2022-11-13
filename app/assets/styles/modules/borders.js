@@ -10,11 +10,11 @@ import {
 let brRadiusInSize = {};
 
 borderRadiusInSize.forEach((br) => {
-  brRadiusInSize[`br${br}`] = { borderRadius: br };
-  brRadiusInSize[`brTL${br}`] = { borderTopLeftRadius: br };
-  brRadiusInSize[`brTR${br}`] = { borderTopRightRadius: br };
-  brRadiusInSize[`brBL${br}`] = { borderBottomLeftRadius: br };
-  brRadiusInSize[`brBR${br}`] = { borderBottomRightRadius: br };
+  brRadiusInSize[`brRad${br}`] = { borderRadius: br };
+  brRadiusInSize[`brRadTL${br}`] = { borderTopLeftRadius: br };
+  brRadiusInSize[`brRadTR${br}`] = { borderTopRightRadius: br };
+  brRadiusInSize[`brRadBL${br}`] = { borderBottomLeftRadius: br };
+  brRadiusInSize[`brRadBR${br}`] = { borderBottomRightRadius: br };
 });
 
 export { brRadiusInSize };
@@ -24,11 +24,11 @@ export { brRadiusInSize };
 let brRadiusInPer = {};
 
 borderRadiusInPercentage.forEach((br) => {
-  brRadiusInPer[`brPer${br}`] = { borderRadius: `${br}%` };
-  brRadiusInPer[`brTLPer${br}`] = { borderTopLeftRadius: `${br}%` };
-  brRadiusInPer[`brTRPer${br}`] = { borderTopRightRadius: `${br}%` };
-  brRadiusInPer[`brBLPer${br}`] = { borderBottomLeftRadius: `${br}%` };
-  brRadiusInPer[`brBRPer${br}`] = { borderBottomRightRadius: `${br}%` };
+  brRadiusInPer[`brRadPer${br}`] = { borderRadius: `${br}%` };
+  brRadiusInPer[`brRadTLPer${br}`] = { borderTopLeftRadius: `${br}%` };
+  brRadiusInPer[`brRadTRPer${br}`] = { borderTopRightRadius: `${br}%` };
+  brRadiusInPer[`brRadBLPer${br}`] = { borderBottomLeftRadius: `${br}%` };
+  brRadiusInPer[`brRadBRPer${br}`] = { borderBottomRightRadius: `${br}%` };
 });
 
 export { brRadiusInPer };
@@ -39,11 +39,11 @@ let brColors = {};
 
 Object.keys(colors).forEach((c) => {
   let className = c.charAt(0).toUpperCase() + c.slice(1);
-  brColors[`br${className}`] = { borderColor: colors[c] };
-  brColors[`brL${className}`] = { borderLeftColor: colors[c] };
-  brColors[`brT${className}`] = { borderTopColor: colors[c] };
-  brColors[`brR${className}`] = { borderRightColor: colors[c] };
-  brColors[`brB${className}`] = { borderBottomColor: colors[c] };
+  brColors[`brColor${className}`] = { borderColor: colors[c] };
+  brColors[`brColorL${className}`] = { borderLeftColor: colors[c] };
+  brColors[`brColorT${className}`] = { borderTopColor: colors[c] };
+  brColors[`brColorR${className}`] = { borderRightColor: colors[c] };
+  brColors[`brColorB${className}`] = { borderBottomColor: colors[c] };
 });
 
 export { brColors };
@@ -53,11 +53,11 @@ export { brColors };
 let brWidths = {};
 
 borderWidth.forEach((brW) => {
-  brWidths[`br${brW}`] = { borderWidth: brW };
-  brWidths[`brT${brW}`] = { borderTopWidth: brW };
-  brWidths[`brR${brW}`] = { borderRightWidth: brW };
-  brWidths[`brB${brW}`] = { borderBottomWidth: brW };
-  brWidths[`brL${brW}`] = { borderLeftWidth: brW };
+  brWidths[`brThickness${brW}`] = { borderWidth: brW };
+  brWidths[`brThicknessT${brW}`] = { borderTopWidth: brW };
+  brWidths[`brThicknessR${brW}`] = { borderRightWidth: brW };
+  brWidths[`brThicknessB${brW}`] = { borderBottomWidth: brW };
+  brWidths[`brThicknessL${brW}`] = { borderLeftWidth: brW };
 });
 
 export { brWidths };

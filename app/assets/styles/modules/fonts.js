@@ -4,6 +4,7 @@ import { colors } from "../base/vars";
 
 export const fontStyleFunc = ({
   fontFamily = "",
+  fontSize = "",
   fontStyle = "",
   fontWeight = "",
   textTransform = "",
@@ -19,6 +20,9 @@ export const fontStyleFunc = ({
   const styles = {};
   if (fontFamily) {
     styles.fontFamily = fontFamily;
+  }
+  if (fontSize) {
+    styles.fontSize = fontSize;
   }
   if (fontStyle) {
     styles.fontStyle = fontStyle;

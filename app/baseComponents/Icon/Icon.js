@@ -1,7 +1,7 @@
 import { View } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import { styles, fontStyleFunc } from "../../assets/styles";
+import { styles, fontStyleFunc } from "Styles";
 
 import { localStyles } from "./localStyles";
 

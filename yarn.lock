@@ -1143,11 +1143,11 @@
     "nullthrows" "^1.1.1"
 
 "@expo/config-plugins@~5.0.0", "@expo/config-plugins@~5.0.1":
-  "integrity" "sha512-1OfnsOrfeSkB0VZfT01UjQ5Uq6p+yYbq8yNkj0e99K/6NLHpyvIxj+5tZIV0nQXgkOcqBIABL2uA7lwB8CkaBQ=="
-  "resolved" "https://registry.npmjs.org/@expo/config-plugins/-/config-plugins-5.0.1.tgz"
-  "version" "5.0.1"
+  "integrity" "sha512-vzUcVpqOMs3h+hyRdhGwk+eGIOhXa5xYdd92yO17RMNHav3v/+ekMbs7XA2c3lepMO8Yd4/5hqmRw9ZTL6jGzg=="
+  "resolved" "https://registry.npmjs.org/@expo/config-plugins/-/config-plugins-5.0.4.tgz"
+  "version" "5.0.4"
   dependencies:
-    "@expo/config-types" "^46.0.0"
+    "@expo/config-types" "^47.0.0"
     "@expo/json-file" "8.2.36"
     "@expo/plist" "0.0.18"
     "@expo/sdk-runtime-versions" "^1.0.0"
@@ -1167,6 +1167,11 @@
   "integrity" "sha512-PXkmOgNwRyBfgVT1HmFZhfh3Qm7WKKyV6mk3/5HJ/LzPh1t+Zs2JrWX8U2YncTLV1QzV7nV8tnkyvszzqnZEzQ=="
   "resolved" "https://registry.npmjs.org/@expo/config-types/-/config-types-46.0.2.tgz"
   "version" "46.0.2"
+
+"@expo/config-types@^47.0.0":
+  "integrity" "sha512-r0pWfuhkv7KIcXMUiNACJmJKKwlTBGMw9VZHNdppS8/0Nve8HZMTkNRFQzTHW1uH3pBj8jEXpyw/2vSWDHex9g=="
+  "resolved" "https://registry.npmjs.org/@expo/config-types/-/config-types-47.0.0.tgz"
+  "version" "47.0.0"
 
 "@expo/config@~7.0.0", "@expo/config@~7.0.1", "@expo/config@7.0.1":
   "integrity" "sha512-4lu0wr45XXJ2MXiLAm2+fmOyy/jjqF3NuDm92fO6nuulRzEEvTP4w3vsibJ690rT81ohtvhpruKhkRs0wSjKWA=="
@@ -1776,9 +1781,9 @@
     "wonka" "^4.0.14"
 
 "@xmldom/xmldom@~0.7.0":
-  "integrity" "sha512-HHXP9hskkFQHy8QxxUXkS7946FFIhYVfGqsk0WLwllmexN9x/+R4UBLvurHEuyXRfVEObVR8APuQehykLviwSQ=="
-  "resolved" "https://registry.npmjs.org/@xmldom/xmldom/-/xmldom-0.7.6.tgz"
-  "version" "0.7.6"
+  "integrity" "sha512-yceMpm/xd4W2a85iqZyO09gTnHvXF6pyiWjD2jcOJs7hRoZtNNOO1eJlhHj1ixA+xip2hOyGn+LgcvLCMo5zXA=="
+  "resolved" "https://registry.npmjs.org/@xmldom/xmldom/-/xmldom-0.7.9.tgz"
+  "version" "0.7.9"
 
 "abort-controller@^3.0.0":
   "integrity" "sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg=="
@@ -2960,7 +2965,15 @@
     "path-browserify" "^1.0.0"
     "url-parse" "^1.5.9"
 
-"expo-constants@~13.2.2", "expo-constants@~13.2.4":
+"expo-constants@~13.2.2":
+  "integrity" "sha512-Zobau8EuTk2GgafwkfGnWM6CmSLB7X8qnQXVuXe0nd3v92hfQUmRWGhJwH88uxXj3LrfqctM6PaJ8taG1vxfBw=="
+  "resolved" "https://registry.npmjs.org/expo-constants/-/expo-constants-13.2.4.tgz"
+  "version" "13.2.4"
+  dependencies:
+    "@expo/config" "~7.0.0"
+    "uuid" "^3.3.2"
+
+"expo-constants@~13.2.4":
   "integrity" "sha512-Zobau8EuTk2GgafwkfGnWM6CmSLB7X8qnQXVuXe0nd3v92hfQUmRWGhJwH88uxXj3LrfqctM6PaJ8taG1vxfBw=="
   "resolved" "https://registry.npmjs.org/expo-constants/-/expo-constants-13.2.4.tgz"
   "version" "13.2.4"
