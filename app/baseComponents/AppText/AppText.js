@@ -1,5 +1,7 @@
 import { View, Text } from "react-native";
 
+import AppView from "BaseComponents/AppView";
+
 import { styles, fontStyleFunc } from "Styles";
 
 import { localStyles } from "./localStyles";
@@ -17,6 +19,7 @@ const AppText = ({
   fontWeight = null,
   textTransform = null,
   children,
+  ...props
 }) => {
   let appliedStyle = {};
 
@@ -55,7 +58,9 @@ const AppText = ({
   }
   return (
     <>
-      <Text style={{ ...fontStyleFunc(appliedStyle) }}>{children}</Text>
+      <AppView {...props}>
+        <Text style={{ ...fontStyleFunc(appliedStyle) }}>{children}</Text>
+      </AppView>
     </>
   );
 };

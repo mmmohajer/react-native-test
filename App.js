@@ -8,7 +8,7 @@ import { styles } from "Styles";
 const App = () => {
   return (
     <>
-      <ScreenContainer>
+      <ScreenContainer isScrollable={false}>
         <Test />
       </ScreenContainer>
     </>
