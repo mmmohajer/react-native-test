@@ -1,20 +1,22 @@
 import { View, Text } from "react-native";
+import { useState } from "react";
 
 import AppView from "BaseComponents/AppView";
 import AppText from "BaseComponents/AppText";
+import Toggler from "BaseComponents/Toggler";
 
 import { styles, fontStyleFunc } from "Styles";
 
 import { localStyles } from "../localStyles";
 
-const ListSeparator = () => {
+const TestToggler = () => {
+  const [isActive, setIsActive] = useState(false);
+
   return (
     <>
-      <AppView heightInSize={4} isFullWidth={true}>
-        <AppText>{""}</AppText>
-      </AppView>
+      <Toggler isActive={isActive} setIsActive={setIsActive} />
     </>
   );
 };
 
-export default ListSeparator;
+export default TestToggler;

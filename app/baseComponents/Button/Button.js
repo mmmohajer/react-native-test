@@ -47,8 +47,7 @@ const Button = ({
     <>
       <AppTouchable
         type="highlight"
-        onPress={onPress}
-        onLongPress={onLongPress}
+        touchableProps={{ onPress, onLongPress, ...touchableProps }}
         bgColor={bgColor}
         paddingL={4}
         paddingR={4}
@@ -65,16 +64,28 @@ const Button = ({
       >
         <AppView>
           {iconType ? (
-            <AppView dircetion="horizontal" isCentralizedInX2Dir>
+            <AppView direction="row" isCentralizedInX2Dir>
               <AppView marginR={1}>
                 <Icon name={iconType} size={iconSize || 30} />
               </AppView>
-              <AppText isBold textTransform={"uppercase"}>
+              <AppText
+                textProps={{
+                  isBold: true,
+                  textTransform: "uppercase",
+                }}
+              >
                 {btnText}
               </AppText>
             </AppView>
           ) : (
-            <AppText>{btnText}</AppText>
+            <AppText
+              textProps={{
+                isBold: true,
+                textTransform: "uppercase",
+              }}
+            >
+              {btnText}
+            </AppText>
           )}
         </AppView>
       </AppTouchable>

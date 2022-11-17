@@ -10,7 +10,7 @@ import { colors } from "Styles/base/vars";
 
 import { styles, fontStyleFunc } from "Styles";
 
-import { localStyles } from "../localStyles";
+import { localStyles } from "../../../localStyles";
 
 const ListCard = ({ title, content, image, onPress, onLongPress = null }) => {
   return (
@@ -24,8 +24,8 @@ const ListCard = ({ title, content, image, onPress, onLongPress = null }) => {
           )}
         >
           <AppTouchable
-            onPress={onPress}
-            onLongPress={onLongPress}
+            type="noFeedback"
+            touchableProps={{ onPress, onLongPress }}
             widthInSize={200}
           >
             <AppView
