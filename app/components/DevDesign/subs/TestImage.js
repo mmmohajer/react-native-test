@@ -16,7 +16,7 @@ const TestImage = () => {
         src={"https://picsum.photos/id/237/200/300"}
         width={200}
         height={200}
-        imageProps={{ blurRadius: 1, borderRadius: 15 }}
+        imgProps={{ blurRadius: 5, borderRadius: 100 }}
         isCentralizedInX1Dir={true}
         isCentralizedInX2Dir={true}
         brRad={10}
@@ -25,15 +25,12 @@ const TestImage = () => {
       <AppImage
         isFromUri={false}
         src={require("Images/general/icon.png")}
-        width={200}
-        height={200}
-        // widthInSize={200}
-        // heightInSize={200}
-        imageProps={{ blurRadius: 1, borderRadius: 15 }}
+        imgProps={{
+          blurRadius: 5,
+        }}
+        imgStyle={{ width: 200, height: 200, borderRadius: 100 }}
         isCentralizedInX1Dir={true}
         isCentralizedInX2Dir={true}
-        brRad={10}
-        brColor="red"
         marginT={1}
       />
     </>

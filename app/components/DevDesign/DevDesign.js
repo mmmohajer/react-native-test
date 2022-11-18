@@ -16,6 +16,7 @@ import TestText from "./subs/TestText";
 import TestTextBox from "./subs/TestTextBox";
 import TestToggler from "./subs/TestToggler";
 import TestView from "./subs/TestView";
+import TestModal from "./subs/TestModal";
 
 import TitleSeparator from "./subs/TitleSeparator";
 import { localStyles } from "./localStyles";
@@ -45,6 +46,9 @@ const DevDesign = () => {
           <TestToggler />
           <TitleSeparator title="Text Box" />
           <TestTextBox />
+          <TitleSeparator title="Modal" />
+          <TestModal />
+
           {/* <TitleSeparator title="List" />
           <TestList /> */}
         </AppView>

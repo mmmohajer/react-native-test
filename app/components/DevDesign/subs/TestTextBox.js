@@ -17,9 +17,9 @@ const TestTextBox = () => {
       <AppView marginL={2} marginR={2}>
         <TextBox
           textProps={{ color: "black", isBold: true }}
-          inputProps={{
-            keyboardType: "ascii-capable",
-          }}
+          // inputProps={{
+          //   keyboardType: "ascii-capable",
+          // }}
           // autoFocus
           isSecure
           iconName="email"
@@ -30,7 +30,7 @@ const TestTextBox = () => {
         <TextBox
           textProps={{ color: "red", isBold: true }}
           inputProps={{
-            keyboardType: "numeric",
+            // keyboardType: "numeric",
             clearButtonMode: "always",
           }}
           isMultiLine={true}

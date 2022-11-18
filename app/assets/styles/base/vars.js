@@ -40,7 +40,7 @@ export { percentages };
 // ---------------------------------------
 
 const borderRadiusInSize = [];
-for (let i = 0; i <= 100; i += 5) {
+for (let i = 0; i <= 500; i += 5) {
   borderRadiusInSize.push(i);
 }
 export { borderRadiusInSize };
@@ -48,7 +48,7 @@ export { borderRadiusInSize };
 // ---------------------------------------
 
 const borderRadiusInPercentage = [];
-for (let i = 0; i <= 100; i += 5) {
+for (let i = 0; i <= 500; i += 5) {
   borderRadiusInPercentage.push(i);
 }
 export { borderRadiusInPercentage };
