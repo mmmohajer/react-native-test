@@ -13,7 +13,9 @@ const AppText = ({ children, textProps, ...props }) => {
   return (
     <>
       <AppView {...props}>
-        <Text style={{ ...appliedStyle }}>{children}</Text>
+        <Text style={{ ...appliedStyle }} {...textProps}>
+          {children}
+        </Text>
       </AppView>
     </>
   );

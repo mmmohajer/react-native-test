@@ -56,7 +56,7 @@ const AppTouchable = ({
           {...touchableProps}
           style={{ ...appliedStyle }}
         >
-          <View>{children}</View>
+          <AppView style={{ ...appliedStyle }}>{children}</AppView>
         </TouchableWithoutFeedback>
       )}
     </>

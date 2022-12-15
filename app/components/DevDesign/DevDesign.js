@@ -17,6 +17,7 @@ import TestTextBox from "./subs/TestTextBox";
 import TestToggler from "./subs/TestToggler";
 import TestView from "./subs/TestView";
 import TestModal from "./subs/TestModal";
+import TestImagePicker from "./subs/TestImagePicker";
 
 import TitleSeparator from "./subs/TitleSeparator";
 import { localStyles } from "./localStyles";
@@ -48,6 +49,8 @@ const DevDesign = () => {
           <TestTextBox />
           <TitleSeparator title="Modal" />
           <TestModal />
+          <TitleSeparator title="Image Picker" />
+          <TestImagePicker />
 
           {/* <TitleSeparator title="List" />
           <TestList /> */}

@@ -18,6 +18,9 @@ const Icon = ({ name = "email", size = 20, color = "black", ...props }) => {
         {name === "email" && (
           <MaterialCommunityIcons name="email" size={size} color={color} />
         )}
+        {name === "image" && (
+          <MaterialCommunityIcons name="image" size={size} color={color} />
+        )}
       </AppView>
     </>
   );
