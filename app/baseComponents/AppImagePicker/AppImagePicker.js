@@ -9,6 +9,8 @@ import AppTouchable from "BaseComponents/AppTouchable";
 import Icon from "BaseComponents/Icon";
 import AppImage from "BaseComponents/AppImage";
 
+import { createAlert } from "Utils/alert";
+
 import { styles, fontStyleFunc } from "Styles";
 
 import { localStyles } from "./localStyles";
@@ -21,6 +23,8 @@ const AppImagePicker = ({
   isMultipleSelectionAtOnce = false,
 }) => {
   const [imgUris, setImgUris] = useState([]);
+  const [promptIsApproved, setPromptIsApproved] = useState(false);
+  const [removedIdx, setRemovedIdx] = useState("");
 
   const requestPermission = async () => {
     try {
@@ -91,10 +95,36 @@ const AppImagePicker = ({
   };
 
   const removeImage = (idx) => {
-    let localImgUris = [...imgUris];
-    localImgUris = localImgUris.filter((item) => item.index !== idx);
-    setImgUris([...localImgUris]);
+    const res = createAlert({
+      isAlert: true,
+      title: "Delete Image",
+      message: "Are you sure you want to delete the selected image?",
+      buttons: [
+        {
+          text: "No",
+          onPress: () => setPromptIsApproved(false),
+          style: "cancel",
+        },
+        {
+          text: "Yes",
+          onPress: () => {
+            setPromptIsApproved(true);
+            setRemovedIdx(idx);
+          },
+        },
+      ],
+    });
   };
+
+  useEffect(() => {
+    if (promptIsApproved && removedIdx) {
+      let localImgUris = [...imgUris];
+      localImgUris = localImgUris.filter((item) => item.index !== removedIdx);
+      setImgUris([...localImgUris]);
+      setPromptIsApproved(false);
+      setRemovedIdx("");
+    }
+  }, [promptIsApproved, removedIdx]);
 
   useEffect(() => {
     requestPermission();
