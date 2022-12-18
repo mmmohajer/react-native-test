@@ -1,15 +1,20 @@
 import { SafeAreaView } from "react-native";
+import { Provider } from "react-redux";
+
+import Routes from "./app/Routes";
+import { store } from "Store";
 
 import ScreenContainer from "Components/ScreenContainer";
 import DevDesign from "Components/DevDesign";
-import Routes from "./app/Routes";
 
 import { styles } from "Styles";
 
 const App = () => {
   return (
     <>
-      <Routes />
+      <Provider store={store}>
+        <Routes />
+      </Provider>
     </>
   );
 };

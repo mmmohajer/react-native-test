@@ -8,6 +8,8 @@ npm i react-native-gesture-handler
 npm i @react-navigation/native
 npm install @react-navigation/native-stack
 npm install @react-navigation/bottom-tabs
+npm i @reduxjs/toolkit
+npm i react-redux
 To support both portrait and landscape mode in app.json file change:
 orientation: "portrait" ==> orientation: "default"
 npm start
