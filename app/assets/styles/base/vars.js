@@ -142,5 +142,4 @@ const opacityValues = [];
 for (let i = 0; i <= 100; i += 5) {
   opacityValues.push(i / 100);
 }
-console.log(opacityValues);
 export { opacityValues };

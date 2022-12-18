@@ -10,6 +10,7 @@ module.exports = function (api) {
           alias: {
             BaseComponents: "./app/baseComponents",
             Components: "./app/components",
+            Screens: "./app/screens",
             Styles: "./app/assets/styles",
             Images: "./app/assets/images",
             Constants: "./app/constants",

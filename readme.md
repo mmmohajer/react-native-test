@@ -5,6 +5,9 @@ Remove assets folder from the root folder
 expo install expo-image-picker
 npm i react-native-community/hooks
 npm i react-native-gesture-handler
+npm i @react-navigation/native
+npm install @react-navigation/native-stack
+npm install @react-navigation/bottom-tabs
 To support both portrait and landscape mode in app.json file change:
 orientation: "portrait" ==> orientation: "default"
 npm start
