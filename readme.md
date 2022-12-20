@@ -2,6 +2,7 @@ npm -g expo-cli
 expo init .
 Copy/Replace All the files into the created directory
 Remove assets folder from the root folder
+expo install expo-secure-store
 expo install expo-image-picker
 npm i react-native-community/hooks
 npm i react-native-gesture-handler
