@@ -184,7 +184,7 @@ const BaseTemplate = ({ children }) => {
         style={{ paddingTop: isAndroid() && StatusBar.currentHeight }}
       >
         {loading && <Loading />}
-        {!loading && notifications.length > 0 ? <Alert /> : ""}
+        {/* {!loading && notifications.length > 0 ? <Alert /> : ""} */}
         {/* <Modal /> */}
         {children}
       </SafeAreaView>

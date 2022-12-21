@@ -21,6 +21,7 @@ module.exports = function (api) {
             Root: "./app",
             Hooks: "./app/hooks",
             Env: "./.env.js",
+            Routes: "./app/routes",
           },
         },
       ],

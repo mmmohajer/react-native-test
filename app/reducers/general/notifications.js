@@ -3,7 +3,6 @@ import { createSlice } from "@reduxjs/toolkit";
 const reducerObject = {};
 reducerObject["addNotification"] = (state, action) => {
   const newItem = { ...action.payload };
-  newItem["isActive"] = true;
   state.push(newItem);
 };
 reducerObject["activateNotification"] = (state, action) => {

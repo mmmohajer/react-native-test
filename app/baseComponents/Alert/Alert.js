@@ -28,7 +28,7 @@ const Alert = () => {
   return (
     <>
       <AlertContainer>
-        {notifications?.map((notif) => (
+        {notifications?.map((notif, idx) => (
           <AlertItem
             key={notif.key}
             notifKey={notif.key}

@@ -6,7 +6,6 @@ import { useSelector, useDispatch } from "react-redux";
 import AppView from "BaseComponents/AppView";
 import AppText from "BaseComponents/AppText";
 import Button from "BaseComponents/Button";
-import LoginComponent from "BaseComponents/LoginComponent";
 import LogoutComponent from "BaseComponents/LogoutComponent";
 import ScreenContainer from "Components/ScreenContainer";
 import DevDesign from "Components/DevDesign";
@@ -29,9 +28,6 @@ const Home = () => {
           btnText="See Products"
           onPress={() => navigation.navigate("ProductStack")}
         />
-        <AppView padding={2} brThickness={2} margin={1} brColor="gray">
-          <LoginComponent />
-        </AppView>
         <LogoutComponent />
         {/* <DevDesign /> */}
       </ScreenContainer>

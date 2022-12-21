@@ -10,6 +10,7 @@ export const ProductNavigations = () => (
     screenOptions={{
       headerStyle: { backgroundColor: "tomato" },
       headerTintColor: "white",
+      headerShown: false,
     }}
   >
     <Stack.Screen

@@ -1,7 +1,7 @@
 import { SafeAreaView } from "react-native";
 import { Provider } from "react-redux";
 
-import Routes from "./app/Routes";
+import Routes from "Routes";
 import { store } from "Store";
 
 import ScreenContainer from "Components/ScreenContainer";

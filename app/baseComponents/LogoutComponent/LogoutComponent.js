@@ -11,6 +11,8 @@ import AppView from "BaseComponents/AppView";
 import AppText from "BaseComponents/AppText";
 import Button from "BaseComponents/Button";
 
+import { notAuthenticated } from "Reducers/apiCalls/isAuthenticated";
+
 import { styles, fontStyleFunc } from "Styles";
 
 import { localStyles } from "./localStyles";
@@ -23,6 +25,7 @@ const LogoutComponent = () => {
   const logoutHandler = async () => {
     await removeStoreData("access_token");
     await removeStoreData("refresh_token");
+    dispatch(notAuthenticated());
     addAlertItem(dispatch, "You have successfully logged out.", "success");
   };
 
