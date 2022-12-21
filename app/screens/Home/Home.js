@@ -7,7 +7,9 @@ import AppView from "BaseComponents/AppView";
 import AppText from "BaseComponents/AppText";
 import Button from "BaseComponents/Button";
 import LoginComponent from "BaseComponents/LoginComponent";
+import LogoutComponent from "BaseComponents/LogoutComponent";
 import ScreenContainer from "Components/ScreenContainer";
+import DevDesign from "Components/DevDesign";
 
 import { TEST } from "Env";
 import { styles, fontStyleFunc } from "Styles";
@@ -27,7 +29,11 @@ const Home = () => {
           btnText="See Products"
           onPress={() => navigation.navigate("ProductStack")}
         />
-        <LoginComponent />
+        <AppView padding={2} brThickness={2} margin={1} brColor="gray">
+          <LoginComponent />
+        </AppView>
+        <LogoutComponent />
+        {/* <DevDesign /> */}
       </ScreenContainer>
     </>
   );

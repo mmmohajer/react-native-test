@@ -24,6 +24,7 @@ const BaseTemplate = ({ children }) => {
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.loading);
   const isAuthenticated = useSelector((state) => state.isAuthenticated);
+  const notifications = useSelector((state) => state.notifications);
 
   const [accessToken, setAccessToken] = useState("");
   const [refreshToken, setRefreshToken] = useState("");
@@ -82,6 +83,7 @@ const BaseTemplate = ({ children }) => {
     url: REFRESH_TOKEN_API_ROUTE,
     bodyData: { refresh: refreshToken },
     showLoading: true,
+    closeLoading: false,
     showErrorMessage: false,
   });
 
@@ -102,6 +104,7 @@ const BaseTemplate = ({ children }) => {
     method: "GET",
     url: AUTHENTICATE_USER_API_ROUTE,
     showLoading: true,
+    closeLoading: false,
     showErrorMessage: false,
   });
 
@@ -181,7 +184,7 @@ const BaseTemplate = ({ children }) => {
         style={{ paddingTop: isAndroid() && StatusBar.currentHeight }}
       >
         {loading && <Loading />}
-        <Alert />
+        {!loading && notifications.length > 0 ? <Alert /> : ""}
         {/* <Modal /> */}
         {children}
       </SafeAreaView>

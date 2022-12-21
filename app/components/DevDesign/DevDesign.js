@@ -21,6 +21,7 @@ import TestImagePicker from "./subs/TestImagePicker";
 import TestPrompt from "./subs/TestPrompt";
 import TestLoading from "./subs/TestLoading";
 import TestPopup from "./subs/TestPopup";
+import TestAlert from "./subs/TestAlert";
 
 import TitleSeparator from "./subs/TitleSeparator";
 import { localStyles } from "./localStyles";
@@ -60,6 +61,8 @@ const DevDesign = () => {
           <TestPrompt />
           <TitleSeparator title="Image Picker" />
           <TestImagePicker />
+          <TitleSeparator title="TestAlert" />
+          <TestAlert />
 
           {/* <TitleSeparator title="List" />
           <TestList /> */}

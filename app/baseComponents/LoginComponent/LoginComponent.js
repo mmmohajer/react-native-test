@@ -5,11 +5,14 @@ import { useNavigation } from "@react-navigation/native";
 
 import AppView from "BaseComponents/AppView";
 import AppText from "BaseComponents/AppText";
+import TextBox from "BaseComponents/TextBox";
 import Button from "BaseComponents/Button";
 
 import useApiCalls from "Hooks/useApiCalls";
 import { loginUser } from "Utils/auth";
 import { LOGIN_API_ROUTE } from "Constants/apiRoutes";
+
+import { addAlertItem } from "Utils/notifications";
 
 import { styles, fontStyleFunc } from "Styles";
 
@@ -26,7 +29,7 @@ const LoginComponent = () => {
   const [password, setPassword] = useState("");
   const [passwordErrorMessage, setPasswordErrorMessage] = useState("");
 
-  const [keepLoggedIn, setKeepLoggedIn] = useState(false);
+  const [keepLoggedIn, setKeepLoggedIn] = useState(true);
 
   useEffect(() => {
     if (isAuthenticated?.authenticated) {
@@ -46,6 +49,8 @@ const LoginComponent = () => {
     method: "POST",
     url: LOGIN_API_ROUTE,
     bodyData,
+    showLoading: true,
+    closeLoading: false,
   });
 
   useEffect(() => {
@@ -54,18 +59,48 @@ const LoginComponent = () => {
     }
   }, [data]);
 
+  const validate = () => {
+    let isValidate = true;
+    if (!email) {
+      isValidate = false;
+      setEmailErrorMessage("Email is required");
+    }
+    if (!password) {
+      isValidate = false;
+      setPasswordErrorMessage("Password is required");
+    }
+    return isValidate;
+  };
+
+  const onLoginPressHandler = () => {
+    if (validate()) {
+      setSendLoginReq(true);
+    }
+  };
+
   return (
     <>
       <AppView>
-        <AppText>LoginComponent</AppText>
-        <Button
-          btnText="Login"
-          onPress={() => {
-            setEmail("mohammadmohajer7091@gmail.com");
-            setPassword("Mb3742870!?!");
-            setSendLoginReq(true);
-          }}
+        <TextBox
+          textProps={{ color: "black", isBold: false }}
+          iconName="email"
+          placeholder="Email"
+          val={email}
+          setVal={setEmail}
+          errorMessage={emailErrorMessage}
+          setErrorMessage={setEmailErrorMessage}
         />
+        <TextBox
+          textProps={{ color: "black", isBold: false }}
+          iconName="email"
+          isSecure
+          placeholder="Password"
+          val={password}
+          setVal={setPassword}
+          errorMessage={passwordErrorMessage}
+          setErrorMessage={setPasswordErrorMessage}
+        />
+        <Button btnText="Login" onPress={onLoginPressHandler} />
       </AppView>
     </>
   );

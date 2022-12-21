@@ -17,6 +17,7 @@ const useApiCalls = ({
   headers,
   useDefaultHeaders = true,
   showLoading = true,
+  closeLoading = true,
   showErrorMessage = true,
 }) => {
   const dispatch = useDispatch();
@@ -67,7 +68,7 @@ const useApiCalls = ({
         if (res?.data) {
           setData(res.data);
         }
-        if (showLoading) {
+        if (showLoading && closeLoading) {
           dispatch(isLoaded());
         }
       } catch (err) {
