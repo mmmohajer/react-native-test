@@ -5,6 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import AppView from "BaseComponents/AppView";
 import AppText from "BaseComponents/AppText";
 import AppTouchable from "BaseComponents/AppTouchable";
+import RegisterComponent from "BaseComponents/RegisterComponent";
 import ScreenContainer from "Components/ScreenContainer";
 
 import { styles, fontStyleFunc } from "Styles";
@@ -18,6 +19,7 @@ const Register = () => {
     <>
       <ScreenContainer isScrollable={false}>
         <AppView padding={2} margin={2} brThickness={2}>
+          <RegisterComponent />
           <AppTouchable
             margin={2}
             isCentralizedInX1Dir
