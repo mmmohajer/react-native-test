@@ -1,11 +1,9 @@
 import { SafeAreaView } from "react-native";
 import { Provider } from "react-redux";
+import { Notifications } from "expo";
 
 import Routes from "Routes";
 import { store } from "Store";
-
-import ScreenContainer from "Components/ScreenContainer";
-import DevDesign from "Components/DevDesign";
 
 import { styles } from "Styles";
 

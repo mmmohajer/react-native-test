@@ -1,5 +1,5 @@
 import { Platform, Dimensions } from "react-native";
-import { API_BASE_URL, PRODUCTION } from "Root/config";
+import { SOCKET_BASE_URL, PRODUCTION } from "Root/config";
 
 export const isIOS = () => {
   return Platform.OS === "ios" ? true : false;
@@ -26,8 +26,8 @@ export const generateKey = (length = 16) => {
 
 export const websocketApiRoute = (url) => {
   if (!PRODUCTION) {
-    return `ws://${API_BASE_URL}${url}`;
+    return `wss://${SOCKET_BASE_URL}${url}`;
   } else {
-    return `wss://${API_BASE_URL}${url}`;
+    return `wss://${SOCKET_BASE_URL}${url}`;
   }
 };

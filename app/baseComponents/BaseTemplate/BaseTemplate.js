@@ -14,10 +14,6 @@ import {
   AUTHENTICATE_USER_API_ROUTE,
 } from "Constants/apiRoutes";
 
-import Loading from "BaseComponents/Loading";
-import Alert from "BaseComponents/Alert";
-import Modal from "BaseComponents/AppModal";
-
 import { localStyles } from "./localStyles";
 
 const BaseTemplate = ({ children }) => {
@@ -183,9 +179,6 @@ const BaseTemplate = ({ children }) => {
       <SafeAreaView
         style={{ paddingTop: isAndroid() && StatusBar.currentHeight }}
       >
-        {loading && <Loading />}
-        {/* {!loading && notifications.length > 0 ? <Alert /> : ""} */}
-        {/* <Modal /> */}
         {children}
       </SafeAreaView>
     </>

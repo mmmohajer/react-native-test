@@ -4,6 +4,7 @@ Copy/Replace All the files into the created directory
 Remove assets folder from the root folder
 expo install expo-secure-store
 expo install expo-image-picker
+expo install @react-native-community/netinfo
 npm i react-native-community/hooks
 npm i react-native-gesture-handler
 npm i @react-navigation/native

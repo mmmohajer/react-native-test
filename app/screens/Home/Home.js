@@ -8,6 +8,7 @@ import AppText from "BaseComponents/AppText";
 import Button from "BaseComponents/Button";
 import LogoutComponent from "BaseComponents/LogoutComponent";
 import ScreenContainer from "Components/ScreenContainer";
+import PublicChat from "Components/PublicChat";
 import DevDesign from "Components/DevDesign";
 
 import { TEST } from "Env";
@@ -29,6 +30,7 @@ const Home = () => {
           onPress={() => navigation.navigate("ProductStack")}
         />
         <LogoutComponent />
+        {/* <PublicChat /> */}
         {/* <DevDesign /> */}
       </ScreenContainer>
     </>

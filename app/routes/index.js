@@ -25,23 +25,9 @@ const Routes = () => {
           <Tab.Navigator
             screenOptions={{
               headerShown: false,
-              // tabBarActiveBackgroundColor: "tomato",
               tabBarActiveTintColor: "dodgerblue",
-              // tabBarInactiveBackgroundColor: "gray",
-              // tabBarInactiveTintColor: "white",
               tabBarItemStyle: {
-                //   borderRadius: 5,
-              },
-              tabBarStyle: {
-                height: 95,
-              },
-              tabBarLabelStyle: {
-                marginBottom: 10,
-                marginTop: 5,
-                fontSize: 12,
-              },
-              tabBarIconStyle: {
-                marginTop: 10,
+                padding: 4,
               },
             }}
           >
@@ -65,14 +51,14 @@ const Routes = () => {
                   backgroundColor: "transparent",
                 },
                 tabBarIconStyle: {
-                  width: 70,
+                  width: 50,
                   backgroundColor: "tomato",
-                  height: 95,
-                  borderRadius: 95,
+                  height: 100,
+                  borderRadius: 50,
                   top: -10,
                 },
                 tabBarIcon: ({ size, color }) => (
-                  <Icon name="email" size={50} color={"white"} />
+                  <Icon name="email" size={40} color={"white"} />
                 ),
               }}
             />
