@@ -21,9 +21,7 @@ import { localStyles } from "./localStyles";
 
 const BaseTemplate = ({ children }) => {
   const dispatch = useDispatch();
-  const loading = useSelector((state) => state.loading);
   const isAuthenticated = useSelector((state) => state.isAuthenticated);
-  const notifications = useSelector((state) => state.notifications);
   const profile = useSelector((state) => state.profile);
 
   const [accessToken, setAccessToken] = useState("");
