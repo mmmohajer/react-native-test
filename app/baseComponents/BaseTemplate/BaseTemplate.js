@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { View, Text, SafeAreaView, StatusBar } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
+import * as Notifications from "expo-notifications";
 
 import { isAndroid } from "Utils/helpers";
 import { getStoreData, setStoreData, removeStoreData } from "Utils/auth";
@@ -12,7 +13,9 @@ import {
   REFRESH_TOKEN_API_ROUTE,
   MY_PROFILE_API_ROUTE,
   AUTHENTICATE_USER_API_ROUTE,
+  EXPO_NOTIFICATION_TOKEN_API_ROUTE,
 } from "Constants/apiRoutes";
+import { isLoaded } from "Reducers/general/loading";
 
 import { localStyles } from "./localStyles";
 
@@ -21,13 +24,17 @@ const BaseTemplate = ({ children }) => {
   const loading = useSelector((state) => state.loading);
   const isAuthenticated = useSelector((state) => state.isAuthenticated);
   const notifications = useSelector((state) => state.notifications);
+  const profile = useSelector((state) => state.profile);
 
   const [accessToken, setAccessToken] = useState("");
   const [refreshToken, setRefreshToken] = useState("");
+  const [expoNotificationToken, setExpoNotificationToken] = useState("");
   const [sendGetCurUserReq, setSendGetCurUserReq] = useState(false);
   const [sendAuthenticatedReq, setSendAuthenticatedReq] = useState(false);
   const [sendrefreshTokenReq, setSendRefreshTokenReq] = useState(false);
   const [sendRepeatedrefreshTokenReq, setSendRepeatedRefreshTokenReq] =
+    useState(false);
+  const [sendExpoNotificationTokenReq, setSendExpoNotificationTokenReq] =
     useState(false);
 
   const retrieveToken = async () => {
@@ -56,7 +63,11 @@ const BaseTemplate = ({ children }) => {
     setAccessToken(localAccessToken);
     setRefreshToken(localRefreshToken);
     try {
-      setSendGetCurUserReq(true);
+      if (!profile?.id) {
+        setSendGetCurUserReq(true);
+      } else {
+        dispatch(isLoaded());
+      }
       setInterval(() => {
         setSendRepeatedRefreshTokenReq(true);
         setTimeout(() => {
@@ -168,11 +179,49 @@ const BaseTemplate = ({ children }) => {
     }
   }, [isAuthenticated]);
 
+  const registerForPushNotification = async () => {
+    try {
+      const res = await Notifications.requestPermissionsAsync();
+      if (res?.granted) {
+        const result = await Notifications.getExpoPushTokenAsync();
+        if (result?.data) {
+          setExpoNotificationToken(result.data);
+        }
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   useEffect(() => {
     if (profileData) {
       getProfile(dispatch, profileData);
+      registerForPushNotification();
     }
   }, [profileData]);
+
+  const { data: expoNotificationData, error: expoNotificationError } =
+    useApiCalls({
+      sendReq: sendExpoNotificationTokenReq,
+      setSendReq: setSendExpoNotificationTokenReq,
+      method: "POST",
+      bodyData: { token: expoNotificationToken },
+      url: EXPO_NOTIFICATION_TOKEN_API_ROUTE,
+      showLoading: false,
+      closeLoading: false,
+      showErrorMessage: false,
+    });
+  useEffect(() => {
+    if (expoNotificationData) {
+      console.log(expoNotificationData);
+    }
+  }, [expoNotificationData]);
+
+  useEffect(() => {
+    if (expoNotificationToken) {
+      setSendExpoNotificationTokenReq(true);
+    }
+  }, [expoNotificationToken]);
 
   return (
     <>

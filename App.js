@@ -1,6 +1,5 @@
-import { SafeAreaView } from "react-native";
+import { useState, useEffect, useRef } from "react";
 import { Provider } from "react-redux";
-import { Notifications } from "expo";
 
 import Routes from "Routes";
 import { store } from "Store";

@@ -31,6 +31,9 @@ export const STRIPE_ADD_ACTIVE_CARD_FOR_CUSTOMER =
   "/api/add-active-card-to-stripe-customer/";
 export const STRIPE_CUSTOMER_SOURCE_HANDLER =
   "/api/stripe-customer-source-handler/";
+export const EXPO_NOTIFICATION_TOKEN_API_ROUTE =
+  "/api/expo-notification-token/";
+
 // WEBSOCKET API ROUTES
 export const WEBSOCKET_CHAT_API_ROUTE = `/wss/public-chat/`;
 
