@@ -22,6 +22,23 @@ your terminal, so you must run the following command in the terminal:
 expo login
 Also, be sure to use real device
 
+Notice for publishing app:
+It's best practice to have the size of icon (icon.png) file in 1024px X 1024px
+
+To optimize assets:
+npm i -g sharp-cli
+npx expo-optimize
+
+Publish app
+expo publish --release-channel staging
+Note: staging is the name of environment, (it can be prod as well or any other name)
+
+in app.json, versionCode and buildNumber
+must increase everytime
+
+expo build:ios
+expo build:android
+
 cmd+d ==> Open developer menu in ios simulator
 cmd+m ==> Open developer menu in android simulator
 cmd+right/left
