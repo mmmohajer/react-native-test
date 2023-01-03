@@ -6,6 +6,7 @@ import AppView from "BaseComponents/AppView";
 import AppText from "BaseComponents/AppText";
 import Button from "BaseComponents/Button";
 import ScreenContainer from "Components/ScreenContainer";
+import AuthRoute from "Components/AuthRoute";
 
 import { styles, fontStyleFunc } from "Styles";
 
@@ -17,11 +18,13 @@ const Products = () => {
   return (
     <>
       <ScreenContainer isScrollable={false}>
-        <AppText>Products</AppText>
-        <Button
-          btnText="See Details"
-          onPress={() => navigation.navigate("ProductDetails", { id: 1 })}
-        />
+        <AuthRoute>
+          <AppText>Products</AppText>
+          <Button
+            btnText="See Details"
+            onPress={() => navigation.navigate("ProductDetails", { id: 1 })}
+          />
+        </AuthRoute>
       </ScreenContainer>
     </>
   );

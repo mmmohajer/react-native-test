@@ -18,11 +18,11 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.iswad.tech.iswad-expo-config",
+      "bundleIdentifier": "com.iswad.tech.iswadexpoconfig",
       "buildNumber": "1.0.0"
     },
     "android": {
-      "package": "com.iswad.tech.iswad-expo-config",
+      "package": "com.iswad.tech.iswadxpoconfig",
       "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./app/assets/images/general/adaptive-icon.png",

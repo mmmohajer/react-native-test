@@ -7,6 +7,7 @@ import AppText from "BaseComponents/AppText";
 import AppTouchable from "BaseComponents/AppTouchable";
 import RegisterComponent from "BaseComponents/RegisterComponent";
 import ScreenContainer from "Components/ScreenContainer";
+import PublicRoute from "Components/PublicRoute";
 
 import { styles, fontStyleFunc } from "Styles";
 
@@ -18,28 +19,30 @@ const Register = () => {
   return (
     <>
       <ScreenContainer isScrollable={false}>
-        <AppView padding={2} margin={2} brThickness={2}>
-          <RegisterComponent />
-          <AppTouchable
-            margin={2}
-            isCentralizedInX1Dir
-            isCentralizedInX2Dir
-            bgColor="red"
-            padding={2}
-            touchableProps={{ onPress: () => navigate.navigate("Login") }}
-          >
-            <AppText
-              textProps={{
-                color: "white",
-                isBold: true,
-                lineHeight: 20,
-                isCenterAlign: true,
-              }}
+        <PublicRoute>
+          <AppView padding={2} margin={2} brThickness={2}>
+            <RegisterComponent />
+            <AppTouchable
+              margin={2}
+              isCentralizedInX1Dir
+              isCentralizedInX2Dir
+              bgColor="red"
+              padding={2}
+              touchableProps={{ onPress: () => navigate.navigate("Login") }}
             >
-              Login
-            </AppText>
-          </AppTouchable>
-        </AppView>
+              <AppText
+                textProps={{
+                  color: "white",
+                  isBold: true,
+                  lineHeight: 20,
+                  isCenterAlign: true,
+                }}
+              >
+                Login
+              </AppText>
+            </AppTouchable>
+          </AppView>
+        </PublicRoute>
       </ScreenContainer>
     </>
   );

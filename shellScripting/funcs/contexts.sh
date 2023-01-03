@@ -44,6 +44,7 @@ import { View, Text } from \"react-native\";
 import AppView from \"BaseComponents/AppView\";
 import AppText from \"BaseComponents/AppText\";
 import ScreenContainer from \"Components/ScreenContainer\";
+import PublicRoute from \"Components/PublicRoute\";
 
 import { styles, fontStyleFunc } from \"Styles\";
 
@@ -53,7 +54,9 @@ const $compName = () => {
   return (
     <>
       <ScreenContainer isScrollable={false}>
-        <AppText>$compName</AppText>
+        <PublicRoute>
+          <AppText>$compName</AppText>
+        </PublicRoute>
       </ScreenContainer>
     </>
   );

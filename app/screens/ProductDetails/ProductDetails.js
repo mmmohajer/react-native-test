@@ -4,7 +4,10 @@ import { useRoute } from "@react-navigation/native";
 
 import AppView from "BaseComponents/AppView";
 import AppText from "BaseComponents/AppText";
+import RoleBasedRoute from "Components/RoleBasedRoute";
 import ScreenContainer from "Components/ScreenContainer";
+
+import { USER_GROUPS } from "Constants/userGroups";
 
 import { styles, fontStyleFunc } from "Styles";
 
@@ -17,7 +20,9 @@ const ProductDetails = () => {
   return (
     <>
       <ScreenContainer isScrollable={false}>
-        <AppText>ProductDetails {id}</AppText>
+        <RoleBasedRoute hasAccessRole={USER_GROUPS.APP_ADMIN}>
+          <AppText>ProductDetails {id}</AppText>
+        </RoleBasedRoute>
       </ScreenContainer>
     </>
   );

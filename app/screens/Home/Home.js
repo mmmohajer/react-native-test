@@ -8,6 +8,7 @@ import AppText from "BaseComponents/AppText";
 import Button from "BaseComponents/Button";
 import LogoutComponent from "BaseComponents/LogoutComponent";
 import ScreenContainer from "Components/ScreenContainer";
+import AuthRoute from "Components/AuthRoute";
 import PublicChat from "Components/PublicChat";
 import DevDesign from "Components/DevDesign";
 
@@ -24,14 +25,16 @@ const Home = () => {
   return (
     <>
       <ScreenContainer isScrollable={false}>
-        <AppText>Home {language}</AppText>
-        <Button
-          btnText="See Products"
-          onPress={() => navigation.navigate("ProductStack")}
-        />
-        <LogoutComponent />
-        {/* <PublicChat /> */}
-        {/* <DevDesign /> */}
+        <AuthRoute>
+          <AppText>Home {language}</AppText>
+          <Button
+            btnText="See Products"
+            onPress={() => navigation.navigate("ProductStack")}
+          />
+          <LogoutComponent />
+          {/* <PublicChat /> */}
+          {/* <DevDesign /> */}
+        </AuthRoute>
       </ScreenContainer>
     </>
   );
