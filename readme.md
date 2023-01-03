@@ -15,6 +15,7 @@ npm i @reduxjs/toolkit
 npm i react-redux
 To support both portrait and landscape mode in app.json file change:
 orientation: "portrait" ==> orientation: "default"
+Create .env.js file and copy .env.sample.js to .env.js file
 npm start
 
 If you get an error to get expo notification token, you need to login to expo in
